@@ -120,5 +120,3 @@ EMAIL_USER = "your_email_address"       # Example: yourname@gmail.com
 EMAIL_PASS = "your_email_password"      # Example: your_app_specific_password
 EMAIL_FROM = "your_email_address"       # Example: yourname@gmail.com
 ```
-
-Ensure MongoDB is running and update the `MONGODB_URI` in the `.env` file with your database connection string.
