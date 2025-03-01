@@ -1,6 +1,6 @@
 # Advanced Role-Based Authentication System Using the MERN Stack (Backend)
 
-![Banner](https://res.cloudinary.com/doxgutilx/image/upload/v1740657044/images/iiqdxle6e4giheutrxkp.png)
+![Banner](https://raw.githubusercontent.com/MehediHasanSumon/mern-backend-server/refs/heads/main/Banner.png)
 
 This project is an advanced role-based authentication system built using the MERN (MongoDB, Express.js, React.js, Node.js) stack. It provides a robust backend for user authentication and authorization, with features like user registration, login, password management, email verification, and role-based access control.
 
@@ -24,13 +24,13 @@ This project is an advanced role-based authentication system built using the MER
 1. **Clone the repository**:
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/MehediHasanSumon/mern-backend-server.git
    ```
 
 2. **Navigate to the project directory**:
 
    ```bash
-   cd <project-folder>
+   cd mern-backend-server
    ```
 
 3. **Install dependencies**:
@@ -54,42 +54,42 @@ You can test the API using Postman. Import the `AuthAPI.postman_collection.json`
 
 - **User Registration**:
 
-  ```
+  ```bash
   POST http://127.0.0.1:8000/api/register
   ```
 
 - **User Login**:
 
-  ```
+  ```bash
   POST http://127.0.0.1:8000/api/login
   ```
 
 - **Resend Verification Email**:
 
-  ```
+  ```bash
   GET http://127.0.0.1:8000/api/resend-verify-email
   ```
 
 - **Verify Email**:
 
-  ```
+  ```bash
   POST http://127.0.0.1:8000/api/verify-email
   ```
 
 - **Check Authenticated User**:
 
-  ```
+  ```bash
   GET http://127.0.0.1:8000/api/checkauthuser
   ```
 
 - **Forgot Password**:
 
-  ```
+  ```bash
   POST http://127.0.0.1:8000/api/forget-password
   ```
 
 - **Confirm Password**:
-  ```
+  ```bash
   POST http://127.0.0.1:8000/api/confirm-password/<Token>
   ```
 
