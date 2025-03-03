@@ -5,7 +5,7 @@ import User from "../models/Users.js";
 
 export const register = async (req, res) => {
   try {
-    const { name, email, password, confirm_password } = req.body;
+    const { name, email, password, password_confirmation } = req.body;
 
     if (!name.trim()) {
       return res.status(400).send({
@@ -71,14 +71,14 @@ export const register = async (req, res) => {
       });
     }
 
-    if (!confirm_password) {
+    if (!password_confirmation) {
       return res.status(400).send({
         status: false,
         message: "Confirm Password is required.",
       });
     }
 
-    if (password !== confirm_password) {
+    if (password !== password_confirmation) {
       return res.status(400).send({
         status: false,
         message: "Password and Confirm Password do not match.",

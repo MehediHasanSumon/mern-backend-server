@@ -58,7 +58,7 @@ export const forgetPassword = async (req, res) => {
 export const confirmPassword = async (req, res) => {
   try {
     const { token } = req.params;
-    const { password, confirm_password } = req.body;
+    const { password, password_confirmation } = req.body;
 
     const getToken = await ResetPasswordToken.findOne({ token });
     if (!token || !token.trim() || !getToken) {
@@ -94,14 +94,14 @@ export const confirmPassword = async (req, res) => {
       });
     }
 
-    if (!confirm_password || !confirm_password.trim()) {
+    if (!password_confirmation || !password_confirmation.trim()) {
       return res.status(400).send({
         status: false,
         message: "Confirm Password is required.",
       });
     }
 
-    if (password !== confirm_password) {
+    if (password !== password_confirmation) {
       return res.status(400).send({
         status: false,
         message: "Password and Confirm Password do not match.",
