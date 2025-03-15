@@ -8,11 +8,12 @@ import {
   confirmPassword,
   forgetPassword,
 } from "../app/controllers/PasswordController.js";
-import { isLoggedin } from "../app/middlewares/AuthMiddleware.js";
+import { isAdmin, isLoggedin } from "../app/middlewares/AuthMiddleware.js";
 import {
   sendEmailVerifyOTP,
   verifyEmail,
 } from "../app/controllers/EmailVerificationController.js";
+import { deleteUser, getAllUser } from "../app/controllers/UserController.js";
 
 const route = express.Router();
 
@@ -24,5 +25,9 @@ route.post("/verify-email", isLoggedin, verifyEmail);
 route.post("/forget-password", forgetPassword);
 route.post("/confirm-password/:token", confirmPassword);
 route.get("/checkauthuser", isLoggedin, checkAuth);
+
+// Admin Routes
+route.get("/users", isLoggedin, isAdmin, getAllUser);
+route.delete("/user/:id", isLoggedin, isAdmin, deleteUser);
 
 export default route;

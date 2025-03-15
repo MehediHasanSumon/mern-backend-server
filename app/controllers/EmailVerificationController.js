@@ -39,7 +39,7 @@ export const sendEmailVerifyOTP = async (req, res) => {
       message: `Email verification code has been sent to ${user.email}.`,
     });
   } catch (error) {
-    logger.error(error);
+    console.error(error);
     return res.status(500).send({
       status: false,
       message: "HTTP 500 Internal Server Error",
@@ -83,7 +83,7 @@ export const verifyEmail = async (req, res) => {
       message: "Email verification has been confirmed successfully.",
     });
   } catch (error) {
-    logger.error(error);
+    console.error(error);
     return res.status(500).send({
       status: false,
       message: "HTTP 500 Internal Server Error",
